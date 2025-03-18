@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rliph73za-go-gitops
+  description: This is GitOps manifest for rliph73za-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=rliph73za-go
+    backstage.io/kubernetes-id: rliph73za-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: rliph73za-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rliph73za-go
